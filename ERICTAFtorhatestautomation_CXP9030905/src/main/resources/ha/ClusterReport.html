@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+var myWindow;
+var text;
+var appName;
+var title;
+var backGround;
+
+function cleanStart() {
+  if (!!myWindow) {
+    myWindow.close();
+  }
+}
+
+function myFunction() {
+  var left = (screen.width/2);
+  var top = (screen.height/2);
+  myWindow = window.open("", "myWindow", 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,width=950,height=400,top='+top+', left='+left);
+  myWindow.document.write(text.fontsize(1));
+  myWindow.document.body.style.setProperty("font-family", "Lucida Console")
+  myWindow.document.title = title;
+  myWindow.document.body.style.backgroundColor = backGround;
+  myWindow.document.getElementById("myTable").style.backgroundColor = "#203764";
+  myWindow.document.getElementById("myTable").style.color = "white";
+  myWindow.document.getElementById("myTable").style.textAlign = "center";
+}
+
+
+${addClusterDataPopUp}
+
+</script>
+<head>
+    <style>
+		    body {
+				font-family: Calibri;
+			}
+			table{
+		    	border-collapse: collapse;
+			}
+			th, td {
+                border: 1px solid #000000;
+                text-align: center;
+                padding: 8px;
+			}
+			a:hover
+            {
+              color:blue;font-weight:bold;
+            }
+			.header{
+				background-color: #203764;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+    </style>
+</head>
+<body>
+<table style="height: 175px;" width="700">
+    <tr class="header">
+        <td colspan="5">Cluster Status Report</td>
+    </tr>
+    ${addClusterReport}
+</table>
+</body>
+</html>

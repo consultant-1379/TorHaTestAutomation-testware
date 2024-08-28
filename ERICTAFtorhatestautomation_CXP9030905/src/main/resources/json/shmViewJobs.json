@@ -1,0 +1,14 @@
+{
+  "columns": [],
+  "offset": 1,
+  "limit": 1000,
+  "sortBy": "jobName",
+  "orderBy": "asc",
+  "filterDetails": [
+    {
+      "columnName": "jobName",
+      "filterOperator": "*",
+      "filterText": ""
+    }
+  ]
+}

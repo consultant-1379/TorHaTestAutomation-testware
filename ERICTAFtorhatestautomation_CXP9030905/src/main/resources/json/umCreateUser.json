@@ -1,0 +1,18 @@
+{
+  "username": "",
+  "name": "",
+  "surname": "",
+  "email": "",
+  "status": "",
+  "passwordResetFlag": "false",
+  "privileges": [
+    {
+      "role" : "NetworkViewer_Operator",
+      "targetGroup" : "ALL"
+    },
+    {
+      "role" : "SECURITY_ADMIN",
+      "targetGroup" : "ALL"
+    }
+  ]
+}

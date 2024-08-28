@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="OverflowFileSystem">
+    <listeners>
+        <listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+    </listeners>
+    <test name="OverflowFileSystem">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.overflow.OverflowDbFileSystem"/>
+        </classes>
+    </test>
+</suite>

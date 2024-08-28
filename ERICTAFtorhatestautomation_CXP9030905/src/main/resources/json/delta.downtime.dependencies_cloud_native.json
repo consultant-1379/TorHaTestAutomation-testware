@@ -1,0 +1,83 @@
+{
+  "UserManagement": [
+    "postgres",
+    "jms",
+    "openidm",
+    "sso"
+  ],
+  "PerformanceManagement": [
+    "jms",
+    "neo4jLeader"
+  ],
+  "PerformanceManagementRouter": [
+    "jms",
+    "neo4jLeader"
+  ],
+  "FaultManagement": [
+    "jms",
+    "eshistory",
+    "neo4jLeader"
+  ],
+  "FaultManagementRouter": [
+    "jms",
+    "eshistory",
+    "neo4jLeader"
+  ],
+  "FaultManagementBsc": [
+    "jms",
+    "eshistory",
+    "neo4jLeader"
+  ],
+  "SoftwareHardwareManagement": [
+    "postgres",
+    "jms",
+    "neo4jLeader"
+  ],
+  "NetworkExplorer": [
+    "neo4jLeader"
+  ],
+  "ShmSmrs": [
+    "filetransferservice"
+  ],
+  "ConfigurationManagement": [
+    "jms",
+    "postgres"
+  ],
+  "NbiAlarmVerifier": [
+    "jms",
+    "visinamingnb"
+  ],
+  "NbiCreateSubsVerifier": [
+    "jms",
+    "visinamingnb"
+  ],
+  "CmBulkExport": [
+    "postgres",
+    "neo4jLeader"
+  ],
+  "CmImportToLive": [
+    "jms",
+    "postgres",
+    "neo4jLeader",
+    "eshistory",
+    "openidm",
+    "elasticsearch"
+  ],
+  "Amos": [
+    "postgres",
+    "sso"
+  ],
+  "ComAaLdap": [
+    "opendj",
+    "secserv"
+  ],
+  "CnomSystemMonitor": [
+    "cnom",
+    "postgres"
+  ],
+  "SystemVerifier": [
+  ],
+  "FileLookupService": [
+    "postgres"
+  ]
+}

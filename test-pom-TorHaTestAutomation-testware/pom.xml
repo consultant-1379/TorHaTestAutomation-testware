@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ericsson.nms.rv.taf</groupId>
+        <artifactId>TorHaTestAutomation-testware</artifactId>
+        <version>3.106.3-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>test-pom-TorHaTestAutomation-testware</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <taf_testware>true</taf_testware>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.nms.rv.taf</groupId>
+            <artifactId>ERICTAFtorhatestautomation_CXP9030905</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.ericsson.cifwk.taf</groupId>
+                <artifactId>taf-maven-plugin</artifactId>
+                <version>${taf_version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

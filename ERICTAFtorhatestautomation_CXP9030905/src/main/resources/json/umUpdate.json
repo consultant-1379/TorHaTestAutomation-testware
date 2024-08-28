@@ -1,0 +1,7 @@
+{
+  "customizedPasswordAgeingEnable": true,
+  "passwordAgeingEnable": true,
+  "pwdMaxAge": "20",
+  "pwdExpireWarning": "4",
+  "graceLoginCount": 0
+}

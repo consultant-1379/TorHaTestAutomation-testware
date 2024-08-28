@@ -1,0 +1,68 @@
+{
+  "jobType": "BACKUP",
+  "name": "",
+  "description": "",
+  "neNames": [],
+  "collectionNames": [],
+  "savedSearchIds": [],
+  "mainSchedule": {
+    "scheduleAttributes": [],
+    "execMode": "IMMEDIATE"
+  },
+  "configurations": [
+    {
+      "platform": "CPP",
+      "properties": []
+    },
+    {
+      "neType": "ERBS",
+      "properties": [
+        {
+          "key": "CV_NAME",
+          "value": ""
+        },
+        {
+          "key": "STARTABLE_CV_NAME",
+          "value": ""
+        },
+        {
+          "key": "ROLLBACK_CV_NAME",
+          "value": ""
+        },
+        {
+          "key": "UPLOAD_CV_NAME",
+          "value": ""
+        },
+        {
+          "key": "CV_IDENTITY",
+          "value": ""
+        },
+        {
+          "key": "CV_COMMENT",
+          "value": ""
+        },
+        {
+          "key": "CV_TYPE",
+          "value": "TEST"
+        }
+      ]
+    }
+  ],
+  "activitySchedules": [
+    {
+      "platformType": "CPP",
+      "value": [
+        {
+          "neType": "ERBS",
+          "value": [
+            {
+              "activityName": "createcv",
+              "execMode": "IMMEDIATE",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

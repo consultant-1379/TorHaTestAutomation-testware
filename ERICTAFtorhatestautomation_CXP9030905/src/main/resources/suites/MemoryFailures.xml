@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MemoryFailures">
+	<listeners>
+		<listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+	</listeners>
+    <test name="MemoryFailures" preserve-order="true">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.ExhaustRam"/>
+            <class name="com.ericsson.sut.test.cases.OverflowFileSystem"/>
+        </classes>
+    </test>
+</suite>

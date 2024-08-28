@@ -1,0 +1,21 @@
+{
+  "cmserv": ["/"],
+  "eventbasedclient": ["/"],
+  "fmserv": ["/"],
+  "httpd": ["/"],
+  "jms": ["/"],
+  "medrouter":  ["/"],
+  "msfm": ["/"],
+  "mscm": ["/"],
+  "mspm": ["/"],
+  "netex": ["/"],
+  "shmserv": ["/"],
+  "shmcoreserv": ["/"],
+  "fmx": ["/"],
+  "openidm": ["/"],
+  "sso": ["/"],
+  "impexpserv": ["/"],
+  "supervc": ["/"],
+  "db": ["/ericsson/versant_data","/var"],
+  "svc": ["/ericsson/pmic", "/ericsson/tor/logstash"]
+}

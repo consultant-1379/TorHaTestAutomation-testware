@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+var myWindow;
+var text;
+var appName;
+var title;
+var backGround;
+
+window.onbeforeunload = function (e) {
+   cleanStart();
+};
+
+window.onpagehide = function (e) {
+   cleanStart();
+}
+
+window.onunload = function (e) {
+   cleanStart();
+}
+
+window.onhide = function (e) {
+   cleanStart();
+}
+
+function myEventHandler(e){
+    if (e.key === "Escape") {
+        cleanStart();
+    }
+};
+
+function cleanStart() {
+  if (!!myWindow) {
+    myWindow.close();
+  }
+}
+
+function myFunction() {
+  var left = (screen.width/2);
+  var top = (screen.height/2);
+  myWindow = window.open("", "myWindow", 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,width=600,height=200,top='+top+', left='+left);
+  myWindow.document.write(text.fontsize(2));
+  myWindow.document.title = title;
+  myWindow.document.body.style.backgroundColor = backGround;
+  myWindow.addEventListener("keydown", myEventHandler, false);
+}
+
+${popupDowntimeInfo}
+
+${popupImageInfo}
+
+</script>
+<head>
+    <style>
+		    body{
+				font-family: Calibri;
+			}
+			table{
+		    	border-collapse: collapse;
+			}
+			th, td {
+                border: 1px solid #000000;
+                text-align: center;
+                padding: 8px;
+			}
+			th {
+                background-color: #4CAF50;
+                color: white;
+			}
+			.header{
+				background-color: #203764;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+			a:link
+            {
+              color:#0000ff;text-decoration:none;
+            }
+			a:visited
+            {
+              color:#0000ff;text-decoration:none;
+            }
+            a:hover
+            {
+              color:blue;font-weight:bold;
+            }
+            .showHide
+            {
+                display: ${ShowDT}
+            }
+            .hideShow
+            {
+                display: ${ShowError}
+            }
+
+            .tooltip
+            {
+                position: relative;
+                display: inline-block;
+
+            }
+
+            .tooltip .tooltiptext {
+              visibility: hidden;
+              width: 120px;
+              background-color: #D3D3D3;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 5px 0;
+
+              /* Position the tooltip */
+            position: absolute;
+              z-index: 1;
+              bottom: 100%;
+              left: 50%;
+              margin-left: -60px;
+            }
+
+            .tooltip .tooltiptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: grey transparent transparent transparent;
+            }
+
+            .tooltip:hover .tooltiptext {
+              visibility: visible;
+            }
+            .flagcloudnative
+            {
+                display: ${envcloudnative}
+            }
+            .flagcloud
+            {
+                display: ${envcloud}
+            }
+            .flagphysical
+            {
+                display: ${envphysical}
+            }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <h3 style ="color:#FF0000">${userCreationFailedMessage}</h3>
+</div>
+<div class = "showHide" >
+    <table style="height: 459px;" width="650">
+        <tbody>
+        <tr class="header">
+            <td colspan="2">Deployment ID</td>
+            <td colspan="2">Deployment Type</td>
+        </tr>
+        <tr>
+            <td colspan="2">${ENV}</td>
+            <td colspan="2">${Type}</td>
+        </tr>
+        <tr class="header">
+            <td colspan="4">Upgrade Path</td>
+        </tr>
+        <tr class="header">
+            <td colspan="2">From</td>
+            <td colspan="2">To</td>
+        </tr>
+        <tr>
+            <td colspan="2">${From_ISO}</td>
+            <td colspan="2">${To_ISO}</td>
+        </tr>
+        <tr class="header">
+            <td colspan="4">Total ${testType} Time</td>
+        </tr>
+        <tr>
+            <td colspan="4">${upgradeTime}</td>
+        </tr>
+        <tr class="header">
+            <td colspan="1">${testType} Start Time</td>
+            <td colspan="3">${testType} End Time</td>
+        </tr>
+        <tr>
+            <td colspan="1">${test_Start_Time}</td>
+            <td colspan="3">${test_End_Time}</td>
+        </tr>
+        <tr class="header">
+            <td rowspan="2">Application</td>
+            <td colspan="2">Total Downtime</td>
+            <td class = "flagphysical" rowspan="2">Delta Downtime </td>
+            <td class = "flagphysical" rowspan="2">Threshold </td>
+            <td class = "flagcloud" rowspan="2">Delta Downtime <font size="2">(Threshold)</font></td>
+            <td class = "flagcloudnative" rowspan="2" colspan="2">Delta Downtime <font size="2">(Threshold)</font></td>
+
+        </tr>
+        <tr class="header">
+            <td><font size="2">Error Downtime</font></td>
+            <td><font size="2">Timeout Downtime</font></td>
+            <!--TORRV-6446  TODO style="width: 80px;" -->
+            <!--<td >Cluster Downtime <font size="2">(Threshold)</font></td>-->
+        </tr>
+
+        ${downtimeInfo}
+        <tr>
+            <td colspan="5">
+                <p style="text-align: left;padding: 0px;font-size: 14px">Note:<br/>
+                    <em> Additional 40 seconds has been added to Threshold delta Downtime. For more info please see
+                        JIRA [TORF-264848].
+                    </em>
+                </p>
+                <p style="text-align: left;padding: 0px;font-size: 14px">Total Downtime:<br/>
+                    <em> Is application downtime measured during the entire Upgrade, from the start to the end with no
+                        considerations taken into account (Currently being used for DT report).<br/>
+                        The recorded Total DT includes DT of the known / expected DT for all application dependencies for
+                        the entire duration of the upgrade. Total Downtime consist of Error DT and Timeout DT.
+                        <br/>
+                        <u>Error Downtime</u> : Error DT is calculated when application returns error response codes (e.g. 4xx, 5xx).
+                        <br/>
+                        <u>Timeout Downtime</u> : Timeout DT is calculated when application failed to respond within 20 seconds after
+                        sending the request and SocketTimeout Exception is thrown.
+                    </em>
+                </p>
+                <p style="text-align: left;padding: 0px;font-size: 14px">Delta Downtime:<br/>
+                    <em>Is application downtime measured during the entire Upgrade, from the start to the end and excludes
+                        the known / expected DT below.<br/>
+                        The recorded Delta DT is calculated by taking Total Downtime and subtracting the known/expected DT
+                        from each application that is dependent on a particular service.<br/>
+                        (Total DT – Expected DT = Delta)<br/>
+                        Application dependent service DT is recorded in Known / Expected Downtime table below in the report
+                        (i.e neo4j, jms, haproxy, postgress).
+                    </em>
+                </p>
+                <p style="text-align: left;padding: 0px;font-size: 14px">Error Message Details in Prepare Phase:<br/>
+                    <em>For more information on error messages during preparation phase failure, go through below link
+                        <a href="https://eteamspace.internal.ericsson.com/display/ERSD/ADU+TCs+Preperation+Phase+Failure+Scenarios" target="_blank">Error message details page</a>
+                    </em>
+                </p>
+                <p style="text-align: left;padding: 0px;font-size: 14px">Troubleshoot Page for Dependency DT logic(for Cloud):<br/>
+                    <em>
+                        <a href="https://eteamspace.internal.ericsson.com/pages/viewpage.action?spaceKey=ERSD&title=DT+Calculation+Logic" target="_blank">Dependency Downtime Troubleshoot Page</a>
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr class="header">
+            <td class = "flagphysical" colspan="5">Known/Expected Downtimes</td>
+            <td class = "flagcloud" colspan="5">Known/Expected Downtimes</td>
+            <td class = "flagcloudnative" colspan="5">Known/Expected Downtimes</td>
+        </tr>
+        <tr class="header">
+            <td>Service</td>
+            <td>From</td>
+            <td>To</td>
+            <td class = "flagphysical">Duration</td>
+            <td class = "flagphysical">Threshold</td>
+            <td class = "flagcloud">Duration</td>
+            <td class = "flagcloud">Threshold</td>
+            <td class = "flagcloudnative">Duration</td>
+            <td class = "flagcloudnative">Delta Downtime (Threshold)</td>
+        </tr>
+        ${downtimeMap}
+        </tbody>
+    </table>
+</div>
+<div class = "hideShow">
+    <h2 >ADU Timed Out</h2>
+    <table style="height: 459px;" width="650">
+        <tbody>
+        <tr class="header">
+            <td colspan="1">Environment</td>
+        </tr>
+        <tr>
+            <td colspan="1">${ENV}</td>
+        </tr>
+        <tr class="header">
+            <td colspan="2">Upgrade Path</td>
+        </tr>
+        <tr class="header">
+            <td>From</td>
+            <td>To</td>
+        </tr>
+        <tr>
+            <td>${From_ISO}</td>
+            <td>${To_ISO}</td>
+        </tr>
+        <tr class="header">
+            <td colspan="2">Total Upgrade Time</td>
+        </tr>
+        <tr>
+            <td colspan="2">${upgradeTime}</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <h3 style ="color:#FF0000">${ErrorMessage}</h3><br/>
+                <h4>${ErrorConsequence}</h4><br/>
+                <h4>${ManualCleanUp}</h4><br/>
+                ${ReferalLink}<br/>
+            </td>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

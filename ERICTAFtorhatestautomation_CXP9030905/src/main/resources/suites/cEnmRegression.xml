@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="cEnmRegression">
+    <listeners>
+        <listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+    </listeners>
+    <test name="cEnmRegression">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.cn.cEnmRegression"/>
+        </classes>
+    </test>
+</suite>

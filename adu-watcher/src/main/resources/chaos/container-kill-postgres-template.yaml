@@ -1,0 +1,14 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: $test_name
+  namespace: $namespace
+spec:
+  action: container-kill
+  mode: $mode
+  gracePeriod: 30
+  containerNames: ['$container_name']
+  selector:
+    labelSelectors:
+      $selector: "$app_name"
+      $role_selector: "$role_name"

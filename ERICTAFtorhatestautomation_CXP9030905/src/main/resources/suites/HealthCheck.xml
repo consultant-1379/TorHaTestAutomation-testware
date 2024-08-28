@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HealthCheck">
+	<listeners>
+		<listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+	</listeners>
+    <test name="HealthCheck" preserve-order="true">
+        <groups>
+            <run>
+                <include name="HealthCheck"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.HealthCheck"/>
+        </classes>
+    </test>
+</suite>
+

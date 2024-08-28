@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="DatabaseFailures">
+	<listeners>
+		<listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+	</listeners>
+    <test name="DatabaseFailures" preserve-order="true">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.KillVersant"/>
+            <class name="com.ericsson.sut.test.cases.KillPostgres"/>
+            <class name="com.ericsson.sut.test.cases.HardResetHost"/>
+        </classes>
+    </test>
+</suite>

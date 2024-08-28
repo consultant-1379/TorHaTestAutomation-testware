@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="RemoveNetworkInterface">
+    <listeners>
+        <listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+    </listeners>
+    <test name="RemoveNetworkInterface">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.RemoveNetworkInterface"/>
+        </classes>
+    </test>
+</suite>

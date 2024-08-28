@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NetworkFailures_Reduce">
+    <listeners>
+        <listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+    </listeners>
+    <test name="NetworkFailures_Reduce" preserve-order="true">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.ReduceNfsBlockSize"/>
+            <class name="com.ericsson.sut.test.cases.ReduceMtu"/>
+        </classes>
+    </test>
+</suite>

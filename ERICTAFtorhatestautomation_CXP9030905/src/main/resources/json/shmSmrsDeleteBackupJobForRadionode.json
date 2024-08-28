@@ -1,0 +1,52 @@
+{
+  "jobType": "DELETEBACKUP",
+  "name": "",
+  "description": "",
+  "neNames": [],
+  "collectionNames": [],
+  "savedSearchIds": [],
+  "mainSchedule": {
+    "scheduleAttributes": [],
+    "execMode": "IMMEDIATE"
+  },
+  "configurations": [
+    {
+      "platform": "ECIM",
+      "neType": "RadioNode",
+      "neProperties": [
+        {
+          "neNames": "NodeName",
+          "properties": [
+            {
+              "key": "BACKUP_NAME",
+              "value": "Hatest_backup_file.zip|null|null|ENM"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "value": "FALSE",
+          "key": "ROLL_BACK"
+        }
+      ]
+    }
+  ],
+  "activitySchedules": [
+    {
+      "platformType": "ECIM",
+      "value": [
+        {
+          "neType": "RadioNode",
+          "value": [
+            {
+              "activityName": "deletebackup",
+              "execMode": "IMMEDIATE",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

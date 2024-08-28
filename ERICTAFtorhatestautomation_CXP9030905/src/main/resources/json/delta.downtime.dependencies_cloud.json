@@ -1,0 +1,101 @@
+{
+  "UserManagement": [
+    "postgres",
+    "jms",
+    "openidm",
+    "nfsdata"
+  ],
+  "PerformanceManagement": [
+    "jms",
+    "neo4jLeader",
+    "nfspmlinks",
+    "nfspm1",
+    "nfsdata",
+    "nfspm2"
+  ],
+  "PerformanceManagementRouter": [
+    "jms",
+    "neo4jLeader",
+    "nfspmlinks",
+    "nfspm1",
+    "nfsdata",
+    "nfspm2"
+  ],
+  "EnmSystemMonitor": [
+  ],
+  "FaultManagement": [
+    "jms",
+    "eshistory",
+    "neo4jLeader",
+    "nfsmdt"
+  ],
+  "FaultManagementRouter": [
+    "jms",
+    "eshistory",
+    "neo4jLeader",
+    "nfsmdt"
+  ],
+  "FaultManagementBsc": [
+    "jms",
+    "eshistory",
+    "neo4jLeader",
+    "nfsmdt"
+  ],
+  "SoftwareHardwareManagement": [
+    "postgres",
+    "jms",
+    "neo4jLeader",
+    "nfssmrs"
+  ],
+  "ShmSmrs": [
+    "filetransferservice"
+  ],
+  "NetworkExplorer": [
+    "neo4jLeader",
+    "nfsdata",
+    "nsfddcdata"
+  ],
+  "ConfigurationManagement": [
+    "jms",
+    "postgres",
+    "nfsdata",
+    "nfsbatch"
+  ],
+  "NbiAlarmVerifier": [
+    "jms",
+    "visinamingnb"
+  ],
+  "NbiCreateSubsVerifier": [
+    "jms",
+    "visinamingnb"
+  ],
+  "CmBulkExport": [
+    "postgres",
+    "neo4jLeader",
+    "nfsbatch",
+    "nfsmdt"
+  ],
+  "CmImportToLive": [
+    "jms",
+    "postgres",
+    "neo4jLeader",
+    "eshistory",
+    "openidm",
+    "elasticsearch",
+    "nfsconfigmgt",
+    "nfsmdt"
+  ],
+  "Amos": [
+    "postgres",
+    "nfsdata",
+    "nfsddcdata",
+    "haproxy"
+  ],
+  "SystemVerifier": [
+    "haproxy",
+    "postgres"
+  ],
+  "FileLookupService": [
+    "postgres"
+  ]
+}

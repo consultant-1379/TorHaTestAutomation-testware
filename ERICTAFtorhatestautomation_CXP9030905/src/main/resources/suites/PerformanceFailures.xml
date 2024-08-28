@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PerformanceFailures">
+	<listeners>
+		<listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+	</listeners>
+    <test name="PerformanceFailures" preserve-order="true">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.StressEnm"/>
+            <class name="com.ericsson.sut.test.cases.CongestNetwork"/>
+        </classes>
+    </test>
+</suite>

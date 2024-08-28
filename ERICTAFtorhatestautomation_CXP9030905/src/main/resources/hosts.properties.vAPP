@@ -1,0 +1,126 @@
+#log4j configuration
+log4j.ha.rootLogger=WARN
+log4j.ha.rootLoggerByPackages=\
+  com.ericsson.sut.test.cases:DEBUG\
+  |com.ericsson.nms.rv.core:DEBUG\
+  |com.ericsson.cifwk.taf:ERROR\
+  |com.jcraft.jsch.JSch:ERROR\
+  |org.apache.http.client.protocol:ERROR\
+  |com.ericsson.nms.rv.core.socks:ERROR
+
+# true if the deployment is physical
+deployment.physical=false
+
+# the ENM credentials
+enm.password=TestPassw0rd
+enm.username=administrator
+
+restore.nodes.at.the.end=true
+
+wl.profiles=nbiva:FMX_01;cm:ENMCLI_01;netex:NETEX_01;cmbil:CMImport_08;cmbe:CMExport_03.CMExport_11;amos:AMOS_01;
+
+# the functional areas to be tested
+functional.area.amos=false
+functional.area.applaunch=false
+functional.area.cmbe=false
+functional.area.cmbil=false
+functional.area.cmcc=false
+functional.area.cm=false
+functional.area.esm=false
+functional.area.fm=false
+functional.area.nbi.va=false
+functional.area.nbi.vs=false
+functional.area.netex=false
+functional.area.pm=false
+functional.area.shm=false
+functional.area.um=false
+functional.area.fan=false
+
+# the path to the HA tools utilities
+hatools.path=/ericsson/tor/data/ha-test-utils/
+# the URL to the ERICtorhatestutilities_CXP9031104 rpm
+hatools.version=1.1.61
+hatools.url=%s/content/repositories/releases/com/ericsson/oss/rv/ha/ERICtorhatestutilities_CXP9031104/%s/ERICtorhatestutilities_CXP9031104-%s.rpm
+
+# nexus url
+nexus.url=https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus
+
+#apache server certificate file
+apache.cert=certificates/haproxy/apacheserver.pem
+
+# the maximum disruption time in seconds
+max.disruption.time=120
+
+# the SFS details retrieved executing "/usr/bin/litp show -p /infrastructure/storage/storage_providers/sfs"
+nasconsole.password=symantec
+
+# the path where the nodes file are stored
+nodes.files.path=/opt/ericsson/enmutils/etc/int/nodes/hatest
+
+#time in seconds
+fm.waiting.time.per.alarm=15
+
+#time to wait for create subscription (in sec)
+#According to the requirements the subscription creation shouldn't take more then 15 minutes in total.
+pm.time.to.wait.for.subscription=900
+
+# the ROP time in minutes
+rop.time=15
+
+#time in minutes
+time.to.wait.for.service.online=11
+
+# run once (install the HA tools, update ENM utils, install License Key)
+run.once=false
+
+# delay for Upgrade (in sec)
+upgrade.sleep=60
+
+# time to wait for Upgrade to start (in min)
+upgrade.wait.for.start=480
+
+# upgrade start time (format yyyyMMddHHmmss)
+upgrade.start.time=0
+
+#N (Nbi) = it needs 1 node and it cannot be shared ( the alarm subscription cannot be removed until nbi verifier decides to do it).
+#S (SHM) = nodes can be shared
+#T (Cm) = nodes cannot be shared
+#E (Bulk exp) = can be shared (at least 3 nodes)
+#M (Amos) = can be shared
+#P (PM) = can be shared
+#F (FM) = nodes cannot be shared
+#R (FMR) = nodes cannot be shared
+# amountOfNodes, nodeType, ossModelIdentity, [flags], does the node need to be synched [Y=yes n=No]
+nodes.conf=\
+  2,ERBS,,N,n;\
+  1,ERBS,,S,n;\
+  1,ERBS,,T,Y;\
+  3,ERBS,,E,Y;\
+  1,ERBS,,M,n;\
+  1,ERBS,,P,Y;\
+  1,ERBS,,F,n;\
+  1,Router,,R,n;\
+  1,Router,,U,Y;\
+  1,ERBS,,L,Y
+
+nbi.changeDir=cd
+nbi.extract.test.client=rpm2cpio ERICcorbaserver_CXP9031152-%s.rpm | cpio --extract --make-directories --verbose "*/test_client/*"
+nbi.makeDir=mkdir -p
+nbi.mkdir.test=/root/tmp/rpmTest
+nbi.rpm.test.path=/root/tmp/rpmTest
+nbi.testclient.path=/opt/ericsson/com.ericsson.oss.nbi.fm/test_client/
+nbi.wget.corba.rpm.version=1.39.3
+nbi.wget.corba.rpm=wget -nv %s/content/repositories/releases/com/ericsson/oss/nbi/fm/ERICcorbaserver_CXP9031152/%s/ERICcorbaserver_CXP9031152-%s.rpm
+
+taf.clusterId=443
+
+# the gateway details
+host.gateway.ip=atvtsXXXX.athtem.eei.ericsson.se
+host.gateway.type=gateway
+host.gateway.user.root.type=root
+host.gateway.user.root.pass=shroot
+host.gateway.port.ssh=22
+
+time.wait.nodes.sync=5
+
+

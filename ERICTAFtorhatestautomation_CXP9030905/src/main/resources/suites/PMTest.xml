@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PMIC">
+	<listeners>
+		<listener class-name="com.ericsson.sut.test.cases.CustomListener"></listener>
+	</listeners>
+    <test name="PMIC" preserve-order="true">
+        <groups>
+            <run>
+                <include name="High Availability"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ericsson.sut.test.cases.KillVersant"/>
+            <class name="com.ericsson.sut.test.cases.KillJBosses"/>
+            <class name="com.ericsson.sut.test.cases.UnmountNfsVm"/>
+            <class name="com.ericsson.sut.test.cases.SfsFailOverTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,48 @@
+{
+  "postgres": [
+    "eric-data-document-database-metrics",
+    "eric-data-document-database-pg13"
+  ],
+  "jms": [
+    "eric-enm-init-container",
+    "eric-enmsg-jmsserver",
+    "eric-enm-monitoring-eap7"
+  ],
+  "neo4jLeader": [
+    "eric-enm-neo4j-extension-plugin",
+    "graphdb-n4j"
+  ],
+  "neo4jFollower": [
+    "eric-enm-neo4j-extension-plugin",
+    "graphdb-n4j"
+  ],
+  "openidm": [
+    "eric-enm-init-container",
+    "eric-enm-securestorage-init-base",
+    "eric-enmsg-openidm",
+    "eric-enm-monitoring-jre"
+  ],
+  "elasticsearch": [
+    "eric-data-search-engine"
+  ],
+  "eshistory": [
+    "eric-data-search-engine"
+  ],
+  "opendj": [
+    "eric-enmsg-opendj-init",
+    "eric-enmsg-opendj"
+  ],
+  "ingress": [
+    "eric-oss-ingress-controller-nx"
+  ],
+  "cts": [
+    "eric-enm-sso-core-token-service"
+  ],
+  "sso": [
+    "eric-enmsg-sso",
+    "eric-enmsg-sso-httpd"
+  ],
+  "visinamingnb": [
+    "eric-enmsg-visinaming-nb"
+  ]
+}

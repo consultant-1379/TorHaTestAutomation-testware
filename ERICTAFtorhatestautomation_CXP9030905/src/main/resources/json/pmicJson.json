@@ -1,0 +1,20 @@
+{
+  "@class": "statistical",
+  "type": "STATISTICAL",
+  "name": "",
+  "description": null,
+  "administrationState": "INACTIVE",
+  "operationalState": "NA",
+  "userType": "USER_DEF",
+  "rop": "FIFTEEN_MIN",
+  "pnpEnabled": false,
+  "filterOnManagedFunction": false,
+  "filterOnManagedElement": false,
+  "taskStatus": "OK",
+  "nodes": [],
+  "nodesTypeVersion": [],
+  "scheduleInfo": {},
+  "id": null,
+  "cbs": false,
+  "counters": []
+}

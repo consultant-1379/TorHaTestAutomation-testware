@@ -1,0 +1,57 @@
+{
+  "jobType": "BACKUP",
+  "name": "",
+  "description": "",
+  "neNames": [],
+  "collectionNames": [],
+  "savedSearchIds": [],
+  "mainSchedule": {
+    "scheduleAttributes": [],
+    "execMode": "IMMEDIATE"
+  },
+  "configurations": [
+    {
+      "platform": "ECIM",
+      "properties": []
+    },
+    {
+      "neType": "RadioNode",
+      "properties": [
+        {
+          "key": "BACKUP_NAME",
+          "value": "Hatest_backup_file"
+        },
+        {
+          "key": "GENERATE_BACKUP_NAME",
+          "value": "true"
+        },
+        {
+          "key": "BACKUP_DOMAIN_TYPE",
+          "value": "System/Systemdata"
+        }
+      ]
+    }
+  ],
+  "activitySchedules": [
+    {
+      "platformType": "ECIM",
+      "value": [
+        {
+          "neType": "RadioNode",
+          "value": [
+            {
+              "activityName": "createbackup",
+              "execMode": "IMMEDIATE",
+              "order": 1
+            },
+            {
+              "activityName":"uploadbackup",
+              "execMode":"IMMEDIATE",
+              "order":2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

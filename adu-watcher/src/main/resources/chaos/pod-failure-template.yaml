@@ -1,0 +1,13 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: $test_name
+  namespace: $namespace
+spec:
+  action: pod-failure
+  mode: $mode
+  gracePeriod: 30
+  duration: "$duration"
+  selector:
+    labelSelectors:
+      $selector: "$app_name"

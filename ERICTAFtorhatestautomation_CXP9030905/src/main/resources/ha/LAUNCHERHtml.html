@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+var myWindow;
+var text;
+var appName;
+var title;
+var backGround;
+
+function cleanStart() {
+  if (!!myWindow) {
+    myWindow.close();
+  }
+}
+
+function myFunction() {
+  var left = (screen.width/2);
+  var top = (screen.height/2);
+  myWindow = window.open("", "myWindow", 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,width=560,height=200,top='+top+', left='+left);
+  myWindow.document.write(text.fontsize(2));
+  myWindow.document.title = title;
+  myWindow.document.body.style.backgroundColor = backGround;
+  myWindow.document.getElementById("myTable").style.backgroundColor = "#203764";
+  myWindow.document.getElementById("myTable").style.color = "white";
+  myWindow.document.getElementById("myTable").style.textAlign = "center";
+}
+
+${addAllAppFailedDataPopUp}
+</script>
+<head>
+    <style>
+		    body{
+				font-family: Calibri;
+			}
+			table{
+		    	border-collapse: collapse;
+			}
+			th, td {
+                border: 1px solid #000000;
+                text-align: center;
+                padding: 8px;
+			}
+			a:hover
+            {
+              color:blue;font-weight:bold;
+            }
+			.header{
+				background-color: #203764;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+    </style>
+</head>
+<body>
+<table style="height: 500px;" width="375">
+    <tbody>
+    <tr class="header">
+        <td rowspan="2">Application Link</td>
+        <td colspan="2">TestCase Execution Count: ${TotalCount}</td>
+    </tr>
+    <tr class="header">
+        <td rowspan="1">Missing Links</td>
+        <td rowspan="1">Failure Requests</td>
+    </tr>
+    <tr class="header">
+        ${addLauncherRequestValues}
+    </tr>
+
+
+    <!--TORRV-6446-->
+    <tr>
+        <p style="text-align: left;padding: 0px;font-size: 14px"><b>AppLauncher:</b><br/>
+            <em>AppLauncher checks the availability of all Application Launcher's UI applications during an upgrade. If "AppLauncher" is marked red on the Availability Report. PLEASE check ApplicationLauncher Report for more details.</br>
+                1.<u> <b> Missing Links </b> </u> :- A list of links, compiled pre-upgrade from those available on the system, are tested iteratively for availability during the upgrade. The result is stored in the format: number of times link was missing / number of iterations.</br>
+                2.<u> <b> Failure Requests </b> </u>:- Once it is confirmed that a link is not missing, it is then confirmed that the link returns a 200 response code when clicked. The result is stored in the format: number of iterations where 200 response code was not received / number of iterations</br>
+                3.<u> <b> Failure Criteria </b> </u>:- If All Application links failed for same iteration during Upgrade, it will display failure count in below table and ADU report will be marked as failed.</br>
+            </em>
+            <em><b>For more details of the Test case functionality: </b></br>
+                <a href="https://eteamspace.internal.ericsson.com/pages/viewpage.action?pageId=2049927734" target="_blank">AppLauncher testcase functionality</a>
+            </em>
+        </p>
+    </tr>
+    </tbody>
+</table>
+
+<table style="height: 100px;" width="375">
+    <tbody>
+    <tr class="header">
+        <td colspan="3">All Application failure during same iteration</td>
+    </tr>
+    <tr class="header">
+        ${addLauncherFailedValues}
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

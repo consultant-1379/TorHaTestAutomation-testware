@@ -1,0 +1,19 @@
+{
+  "username": "",
+  "password": "",
+  "name": "",
+  "surname": "",
+  "email": "",
+  "status": "",
+  "passwordResetFlag": "false",
+  "privileges": [
+    {
+      "role" : "ADMINISTRATOR",
+      "targetGroup" : "ALL"
+    },
+    {
+      "role" : "SECURITY_ADMIN",
+      "targetGroup" : "ALL"
+    }
+  ]
+}

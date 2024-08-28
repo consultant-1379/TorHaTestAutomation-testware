@@ -1,0 +1,52 @@
+{
+  "jobType": "DELETEBACKUP",
+  "name": "",
+  "description": "",
+  "neNames": [],
+  "collectionNames": [],
+  "savedSearchIds": [],
+  "mainSchedule": {
+    "scheduleAttributes": [],
+    "execMode": "IMMEDIATE"
+  },
+  "configurations": [
+    {
+      "platform": "CPP",
+      "neType": "ERBS",
+      "properties":[
+        {
+          "value":"FALSE",
+          "key":"ROLL_BACK"
+        }
+      ],
+      "neProperties": [
+        {
+          "neNames":"NodeName",
+          "properties":[
+            {
+              "value":"Hatest_backup_file.zip|ENM",
+              "key":"CV_NAME"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "activitySchedules": [
+    {
+      "platformType": "CPP",
+      "value": [
+        {
+          "neType": "ERBS",
+          "value": [
+            {
+              "execMode": "IMMEDIATE",
+              "activityName": "deletecv",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

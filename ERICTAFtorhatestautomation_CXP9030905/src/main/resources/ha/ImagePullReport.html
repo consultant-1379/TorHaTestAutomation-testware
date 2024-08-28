@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+var myWindow;
+var text;
+var appName;
+var title;
+var backGround;
+
+</script>
+<head>
+    <style>
+		    body{
+				font-family: Calibri;
+			}
+			table{
+		    	border-collapse: collapse;
+			}
+			th, td {
+                border: 1px solid #000000;
+                text-align: center;
+                padding: 8px;
+			}
+			a:hover
+            {
+              color:blue;font-weight:bold;
+            }
+			.header{
+				background-color: #203764;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+    </style>
+</head>
+<body>
+<table style="height: 175px;" width="700">
+    <tr class="header">
+        <td colspan="5">App Image Pull Data</td>
+    </tr>
+    <tr class="header">
+        <td colspan="1">Pod</td>
+        <td colspan="1">Image</td>
+        <td colspan="1">Start Time</td>
+        <td colspan="1">End Time</td>
+        <td colspan="1">Pull Time</td>
+    </tr>
+    ${addAppImageData}
+</table>
+<table style="height: 175px;" width="700">
+    <tr class="header">
+        <th colspan="5">Infra Image Pull Data  </th>
+    </tr>
+    <tr class="header">
+        <td colspan="1">Pod</td>
+        <td colspan="1">Image</td>
+        <td colspan="1">Start Time</td>
+        <td colspan="1">End Time</td>
+        <td colspan="1">Pull Time</td>
+    </tr>
+    ${addInfraImageData}
+</table>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "cm": ["mscm", "cmserv", "medrouter", "eventbasedclient", "supervc"],
+  "fm": ["msfm","fmserv"],
+  "pm": ["mspm","pmserv"],
+  "db": ["db-1","db-2"]
+}
